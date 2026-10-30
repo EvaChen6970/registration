@@ -1,8 +1,8 @@
 # Bone marrow CODEX / H&E registration toolkit
 
-All commands run on `jhcpu1`. Connect with `ssh chenyuxi@jhcpu1.cse.ust.hk`, then change into this project directory before running the examples below. The raw dataset is read-only; derived outputs go to the dataset's `registration/` directory unless an output path is supplied.
+Run commands from the project root. The raw dataset is read-only; derived outputs go to the dataset's `registration/` directory unless an output path is supplied.
 
-Set these variables after entering the project directory. Keep `DATASET_ROOT` as a local path or environment-specific value; do not hard-code machine-specific paths in scripts or documentation.
+Set these variables to match your environment before running the examples.
 
 ```bash
 DATASET_ROOT=PATH_TO_BONE_MARROW_CODEX
@@ -18,7 +18,7 @@ PYTHON=python
 The generalized implementation takes explicit image paths. HE is the moving image; SP is fixed. The SP channel is used only for feature matching (default channel 0, usually DAPI for CODEX).
 
 ```bash
-python src/register_pair.py \
+$PYTHON src/register_pair.py \
   --he /path/to/sample_HE.qptiff \
   --sp /path/to/sample_SP.qptiff \
   --out-dir /path/to/output/sample \
